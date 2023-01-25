@@ -1,0 +1,90 @@
+<style>
+  input:hover
+{
+background-color:rgb(19, 163, 230);
+}
+form{
+font-family:Arial;
+background-color:rgba(166, 171, 173, 0.664);
+}
+
+</style>
+
+<div class="container mt-4">
+ <div class="card">
+ <h3 style="color:rgba(241, 41, 6, 0.747)"align="center"> Faculty Details</h3>
+<form>
+ <div class="form-group">
+     <label>Name</label>
+     <input type="text"[(ngModel)]="facultyname"[ngModelOptions]="{standalone:true}"class="form-control"id="name" placeholder="Enter Name" required/>
+ </div>
+ <div class="form-group">
+     <label>Experience</label>
+     <input type="text"[(ngModel)]="experience"[ngModelOptions]="{standalone:true}"class="form-control"id="experience" placeholder="Experience"required/>
+ </div>
+ <div class="form-group">
+     <label>Mobile</label>
+     <input type="text"[(ngModel)]="mobile"[ngModelOptions]="{standalone:true}"class="form-control"id="mobile" placeholder="Enter Mobile Number"required/>
+ </div>
+ <div class="form-group">
+   <label>Email</label>
+   <input type="text"[(ngModel)]="email"[ngModelOptions]="{standalone:true}"class="form-control"id="email" placeholder="Enter EmailId"required/>
+</div>
+<div class="form-group">
+ <label>Department</label>
+ <input type="text"[(ngModel)]="department"[ngModelOptions]="{standalone:true}"class="form-control"id="department" placeholder="Department"required/>
+</div>
+
+ <button type="submit" class="btn btn-primary mt-4"(click)="save()">Submit</button>
+</form>
+ </div>
+</div>
+<div class="container mt-4">
+ <h3 style="color:rgba(20, 132, 207, 0.918)">Faculty Table</h3>
+<style>
+ tr:hover
+{
+background-color:rgb(197, 90, 211);
+}
+tr:hover
+{
+background-color:rgb(146, 136, 138);
+}
+table{
+border-collapse:collapse;
+}
+
+</style>
+ <table class="table table-striped">
+   <thead>
+       <h6 *ngIf="!isResultLoaded">Loading....</h6>
+       <tr>
+           <th scope="col">Faculty ID</th>
+           <th scope="col">Faculty Name</th>
+           <th scope="col">Experience</th>
+           <th scope="col">Mobile</th>
+           <th scope="col">Email</th>
+           <th scope="col">Department</th>
+           <th scope="col">Options</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor="let FacultyItem of FacultyArray">
+           <th scope="row">{{FacultyItem.facultyid}}</th>
+           <td>{{FacultyItem.facultyname|uppercase}}</td>
+           <td>{{FacultyItem.experience}}</td>
+           <td>{{FacultyItem.mobile}}</td>
+           <td>{{FacultyItem.email}}</td>
+           <td>{{FacultyItem.department}}</td>
+           <td>
+           <button type="button" class="btn btn-success"(click)="setUpdate(FacultyItem)">Edit</button>
+           <button type="button" class="btn btn-danger"(click)="setDelete(FacultyItem)">delete</button>
+
+             </td>
+       </tr>
+   </tbody>
+</table>
+</div>
+<div  aligh="center">
+<h4><a routerLink="/login">Click here to Logout</a></h4>
+</div>

@@ -1,0 +1,70 @@
+<style>
+    hr{
+border:2px solid rgb(226, 22, 22);
+margin-bottom:50px;
+}
+
+</style>
+<div align="center">
+    <h5>Faculty Login</h5>
+    <br />
+    <fieldset>     
+        <div class="col-sm-4">
+    <form  method="post">
+ 
+      
+<div alight="left">
+    
+            <tr>
+                <label class="form-label">Username:</label>
+                <td>
+                <input type="email" class="form-control" placeholder="Enter Email" required>
+                </td>
+            </tr>
+         </div>  
+            <br>
+           <div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Password :</label>
+                <td><input type="password"class="form-control" placeholder="Enter password"required /></td>
+            </tr>
+            <br>
+            <tr>
+                <div>
+                    <button (click)="onFacultyClick()" class="btn btn-info">Login</button>
+                </div>
+                
+            
+            </tr>
+            
+</div>
+    </form>
+        </div>
+<hr>
+<div align="center">
+    <h5>Student Login</h5>
+    <form method="post">
+        <tr>
+            <label class="form-label">Username:</label>
+            <td>
+            <input type="email" class="form-control" placeholder="Enter Email" required>
+            </td>
+        </tr>
+       
+        <br>
+       <div alight="left">
+      
+        <tr>
+             <label class="form-label" >Password :</label>
+            <td><input type="password"class="form-control" placeholder="Enter password"required /></td>
+        </tr>
+        <br>
+        <tr>
+        
+    <div>
+    <button (click)="onStudentClick()" class="btn btn-info">Login</button>
+</div>
+<br>
+
+
